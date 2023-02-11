@@ -11,7 +11,7 @@ class Login extends React.Component {
     errorMsg: ''
   };
 
-  handleLogin = (event) => {
+    handleLogin = (event) => {
     event.preventDefault();
     const { email, password } = this.state;
     const fieldsToValidate = [{ email }, { password }];
@@ -23,6 +23,7 @@ class Login extends React.Component {
           signin_error: 'Please enter all the fields.'
         }
       });
+      console.log('---', validateFields)
     } else {
       this.setState({
         errorMsg: {
@@ -42,17 +43,11 @@ class Login extends React.Component {
   };
 
   render() {
-    const { errorMsg } = this.state;
     return (
       <div className="login-page">
         <h1>Banking Application</h1>
         <div className="login-form">
           <Form onSubmit={this.handleLogin}>
-            {errorMsg && errorMsg.signin_error && (
-              <p className="errorMsg centered-message">
-                {errorMsg.signin_error}
-              </p>
-            )}
             <Form.Group controlId="email">
               <Form.Label >Email address</Form.Label>
               <Form.Control 

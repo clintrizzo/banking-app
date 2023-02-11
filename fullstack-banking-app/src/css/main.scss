@@ -11,8 +11,18 @@ html {
   font-size: 62.5%;
 }
 
-after:required{
-  border-color: red
+// :required{
+//   border-color: red
+// }
+
+:required:valid {
+  border-color: green;
+  border-width: 3px;
+}
+:required:invalid {
+  border-color: red;
+  border-width: 3px;
+
 }
 
 body {
