@@ -11,7 +11,7 @@ class Register extends React.Component {
     email: '',
     password: '',
     cpassword: '',
-    successMsg: '',
+    successMsg: 'Registration was successful!',
     errorMsg: '',
     isSubmitted: false
   };
@@ -74,6 +74,7 @@ class Register extends React.Component {
             <Form.Group controlId="first_name">
               <Form.Label>First name</Form.Label>
               <Form.Control
+                required
                 type="text"
                 name="first_name"
                 placeholder="Enter first name"
@@ -83,6 +84,7 @@ class Register extends React.Component {
             <Form.Group controlId="last_name">
               <Form.Label>Last name</Form.Label>
               <Form.Control
+                required
                 type="text"
                 name="last_name"
                 placeholder="Enter last name"
@@ -92,6 +94,7 @@ class Register extends React.Component {
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
+                required
                 type="email"
                 name="email"
                 placeholder="Enter email"
@@ -101,6 +104,7 @@ class Register extends React.Component {
             <Form.Group controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
+                required
                 type="password"
                 name="password"
                 placeholder="Enter password"
@@ -110,6 +114,7 @@ class Register extends React.Component {
             <Form.Group controlId="cpassword">
               <Form.Label>Confirm password</Form.Label>
               <Form.Control
+                required
                 type="password"
                 name="cpassword"
                 placeholder="Enter confirm password"
