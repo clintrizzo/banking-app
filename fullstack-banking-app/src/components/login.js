@@ -75,7 +75,7 @@ class Login extends React.Component {
               )
             )}
             <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label style={{'marginTop':'25px'}}>Email address</Form.Label>
               <Form.Control
                 type="email"
                 name="email"

@@ -72,7 +72,7 @@ class Register extends React.Component {
               )
             )}
             <Form.Group controlId="first_name">
-              <Form.Label>First name</Form.Label>
+              <Form.Label style={{'marginTop':'25px'}}>First name</Form.Label>
               <Form.Control
                 required
                 type="text"
