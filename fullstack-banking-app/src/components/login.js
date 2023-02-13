@@ -8,10 +8,12 @@ class Login extends React.Component {
   state = {
     email: '',
     password: '',
-    errorMsg: ''
+    errorMsg: '',
+    successMsg: 'Loading profile...',
+    isSubmitted: false
   };
 
-    handleLogin = (event) => {
+  handleLogin = (event) => {
     event.preventDefault();
     const { email, password } = this.state;
     const fieldsToValidate = [{ email }, { password }];
@@ -23,14 +25,28 @@ class Login extends React.Component {
           signin_error: 'Please enter all the fields.'
         }
       });
-      console.log('---', validateFields)
     } else {
       this.setState({
         errorMsg: {
           signin_error: ''
         }
-      }); 
-      // login successful
+      });
+
+
+//TODO need to update this portion, this is for testing purposes only at the moment
+    } if (email !== 'test@nonexisted.com') {
+      this.setState({
+        errorMsg: {
+          signin_error: 'Email is incorrect'
+        }
+      });
+    } else {
+      this.setState({ 
+        isSubmitted: true,
+        successMsg: {
+          signin_success: 'Loading Profile...'
+        }
+      });
     }
   };
 
@@ -43,15 +59,24 @@ class Login extends React.Component {
   };
 
   render() {
+    const { errorMsg, successMsg, isSubmitted } = this.state;
     return (
       <div className="login-page">
         <h1>Banking Application</h1>
         <div className="login-form">
           <Form onSubmit={this.handleLogin}>
+          {errorMsg && errorMsg.signin_error ? (
+              <p className="errorMsg centered-message">
+                {errorMsg.signin_error}
+              </p>
+            ) : (
+              isSubmitted && (
+                <p className="successMsg centered-message">{successMsg.signin_success}</p>
+              )
+            )}
             <Form.Group controlId="email">
-              <Form.Label >Email address</Form.Label>
-              <Form.Control 
-                required 
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
                 type="email"
                 name="email"
                 placeholder="Enter email"
@@ -61,7 +86,6 @@ class Login extends React.Component {
             <Form.Group controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                required
                 type="password"
                 name="password"
                 placeholder="Enter password"

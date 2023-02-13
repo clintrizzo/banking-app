@@ -1,28 +1,14 @@
 $background: black;
 
 %centered {
-  display: flex;
-  min-height: 60vh;
-  justify-content: center;
+  // display: flex;
+  // min-height: 50vh;
+  // justify-content: center;
   align-items: center;
 }
 
 html {
   font-size: 62.5%;
-}
-
-// :required{
-//   border-color: red
-// }
-
-:required:valid {
-  border-color: green;
-  border-width: 3px;
-}
-:required:invalid {
-  border-color: red;
-  border-width: 3px;
-
 }
 
 body {
@@ -34,17 +20,32 @@ body {
   letter-spacing: 1px;
 }
 
-.errorMsg {
-  color: #f21e08;
-  padding: 0.5rem;
-  padding-left: 0;
-  max-width: 450px;
+:required:valid {
+  border-color: rgb(27, 160, 27);
+  border-width: 3px;
 }
 
 .successMsg {
-  color: #00ff00;
-  background: #077707;
+  color: white;
+  background: rgb(27, 160, 27);
   padding: 0.5rem;
+  padding-left: 0.2;
+  font-size: 20px;
+  text-align: center;
+}
+
+.errorMsg {
+  background-color: #ac2212;
+  color: white;
+  padding: 0.5rem;
+  padding-left: 0.2;
+  font-size: 20px;
+  text-align: center;
+}
+
+:required:invalid{
+  border-color: #f21e08;
+  border-width: 3px;
 }
 
 h1 {
@@ -132,20 +133,18 @@ header {
 
 .form-control {
   display: unset;
+  font-size: 1.8rem;
 }
 
 .login-page {
   text-align: center;
+  margin-bottom: -200px;
 }
 
 button,
 input[type='button'],
 input[type='submit'],
 .btn {
-  font-size: 1.6rem;
-}
-
-.form-control {
   font-size: 1.6rem;
 }
 
@@ -164,147 +163,147 @@ input[type='submit'],
   }
 }
 
-.account {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
+// .account {
+//   display: flex;
+//   justify-content: center;
+//   margin-bottom: 1rem;
 
-  .account-btn {
-    margin: 1.6rem;
-    padding: 6px 12px;
-    letter-spacing: 1px;
-  }
-}
+//   .account-btn {
+//     margin: 1.6rem;
+//     padding: 6px 12px;
+//     letter-spacing: 1px;
+//   }
+// }
 
-.label-value {
-  margin-left: 1rem;
-  word-break: break-all;
-}
+// .label-value {
+//   margin-left: 1rem;
+//   word-break: break-all;
+// }
 
-.profile-form {
-  .label-value {
-    display: block;
-    margin-left: 0;
-  }
-}
+// .profile-form {
+//   .label-value {
+//     display: block;
+//     margin-left: 0;
+//   }
+// }
 
-.edit-account {
-  font-size: 1.6rem;
-  float: right;
-  letter-spacing: initial;
-  text-decoration: underline;
-  padding-top: 0.5rem;
-}
+// .edit-account {
+//   font-size: 1.6rem;
+//   float: right;
+//   letter-spacing: initial;
+//   text-decoration: underline;
+//   padding-top: 0.5rem;
+// }
 
-.summary-form .label {
-  width: 15rem;
-}
+// .summary-form .label {
+//   width: 15rem;
+// }
 
-.summary-form,
-.account {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-}
+// .summary-form,
+// .account {
+//   width: 80%;
+//   margin: auto;
+//   text-align: center;
+// }
 
-.btn-report {
-  margin: 1rem 0;
-}
+// .btn-report {
+//   margin: 1rem 0;
+// }
 
-.transactions-section {
-  text-align: left;
+// .transactions-section {
+//   text-align: left;
 
-  .main-info {
-    text-align: left;
-  }
-}
+//   .main-info {
+//     text-align: left;
+//   }
+// }
 
-.report-table {
-  margin-bottom: 3rem;
-}
+// .report-table {
+//   margin-bottom: 3rem;
+// }
 
-%pagination {
-  background-color: #d9c2ac;
-}
+// %pagination {
+//   background-color: #d9c2ac;
+// }
 
-%active-pagination {
-  background-color: inherit;
-  border-color: inherit;
-  color: #fff;
-  outline: none;
+// %active-pagination {
+//   background-color: inherit;
+//   border-color: inherit;
+//   color: #fff;
+//   outline: none;
 
-  &:focus {
-    box-shadow: none;
-  }
-}
+//   &:focus {
+//     box-shadow: none;
+//   }
+// }
 
-.page-item {
-  @extend %pagination;
-  &.active {
-    background-color: #494961;
-    .page-link {
-      @extend %active-pagination;
-    }
-  }
-  .page-link {
-    @extend %active-pagination;
-  }
-}
+// .page-item {
+//   @extend %pagination;
+//   &.active {
+//     background-color: #494961;
+//     .page-link {
+//       @extend %active-pagination;
+//     }
+//   }
+//   .page-link {
+//     @extend %active-pagination;
+//   }
+// }
 
-.dropdown-toggle {
-  background-color: #fff;
-  color: #000;
-}
+// .dropdown-toggle {
+//   background-color: #fff;
+//   color: #000;
+// }
 
-.dropdown-menu {
-  min-width: 5rem;
-  a {
-    color: #000;
-  }
-}
+// .dropdown-menu {
+//   min-width: 5rem;
+//   a {
+//     color: #000;
+//   }
+// }
 
-@media only screen and (max-width: 600px) {
-  .action-items {
-    flex-direction: column;
-  }
+// @media only screen and (max-width: 600px) {
+//   .action-items {
+//     flex-direction: column;
+//   }
 
-  .login-form {
-    width: 100%;
-  }
+//   .login-form {
+//     width: 100%;
+//   }
 
-  header {
-    .links {
-      .link:link,
-      .link:visited {
-        display: block;
-      }
+//   header {
+//     .links {
+//       .link:link,
+//       .link:visited {
+//         display: block;
+//       }
 
-      .link:hover,
-      .link:active {
-        border-bottom: 2px solid transparent;
-      }
-    }
-  }
+//       .link:hover,
+//       .link:active {
+//         border-bottom: 2px solid transparent;
+//       }
+//     }
+//   }
 
-  .account {
-    flex-direction: column;
-    text-align: left;
+//   .account {
+//     flex-direction: column;
+//     text-align: left;
 
-    .account-btn {
-      margin: 1rem;
-      padding: 3px 8px;
-    }
-  }
+//     .account-btn {
+//       margin: 1rem;
+//       padding: 3px 8px;
+//     }
+//   }
 
-  .edit-account {
-    display: block;
-    float: none;
-  }
+//   .edit-account {
+//     display: block;
+//     float: none;
+//   }
 
-  .account-form {
-    .label-value {
-      display: block;
-      margin-left: 0;
-    }
-  }
-}
+//   .account-form {
+//     .label-value {
+//       display: block;
+//       margin-left: 0;
+//     }
+//   }
+// }
