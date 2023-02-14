@@ -1,9 +1,82 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  animationDistanceThreshold: 5,
+  arch: "arm64",
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    baseUrl: "http://localhost:3030/",
+    experimentalFetchPolyfill: false,
+    experimentalInteractiveRunEvents: false,
+    experimentalModifyObstructiveThirdPartyCode: false,
+    experimentalSessionAndOrigin: false,
+    experimentalSourceRewriting: false,
+    experimentalStudio: false,
+    experimentalWebKitSupport: false,
+    excludeSpecPattern: "*.hot-update.js",
+    slowTestThreshold: 10000,
+    specPattern: "cypress/e2e/*.cy.{js,jsx,ts,tsx}",
+    supportFile: "cypress/support/e2e.{js,jsx,ts,tsx}",
+    testIsolation: null,
   },
+  blockHosts: null,
+
+  browsers: [
+    {
+      name: "chrome",
+      family: "chromium",
+      channel: "stable",
+      displayName: "Chrome",
+      version: "109.0.5414.119",
+      path: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      minSupportedVersion: 64,
+      majorVersion: "109",
+    },
+  ],
+
+  chromeWebSecurity: true,
+  clientCertificates: [],
+  defaultCommandTimeout: 4000,
+
+  env: {},
+
+  execTimeout: 60000,
+  fileServerFolder: "",
+  fixturesFolder: "cypress/fixtures",
+  hosts: null,
+  includeShadowDom: false,
+  isInteractive: true,
+  keystrokeDelay: 0,
+  modifyObstructiveCode: true,
+  numTestsKeptInMemory: 50,
+  pageLoadTimeout: 60000,
+  platform: "darwin",
+  port: null,
+  projectId: null,
+  redirectionLimit: 20,
+  reporter: "spec",
+  reporterOptions: null,
+  requestTimeout: 5000,
+  resolvedNodePath: null,
+  resolvedNodeVersion: null,
+  responseTimeout: 30000,
+
+  retries: {
+    runMode: 0,
+    openMode: 0,
+  },
+
+  screenshotOnRunFailure: true,
+  screenshotsFolder: false,
+  scrollBehavior: "top",
+  supportFolder: false,
+  taskTimeout: 60000,
+  trashAssetsBeforeRuns: true,
+  userAgent: null,
+  video: true,
+  videoCompression: 32,
+  videoUploadOnPasses: true,
+  viewportHeight: 660,
+  viewportWidth: 1000,
+  waitForAnimations: true,
+  watchForFileChanges: true,
 });
