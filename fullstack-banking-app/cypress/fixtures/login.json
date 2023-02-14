@@ -1,0 +1,7 @@
+{
+  "email": "test@nonexisted.com",
+  "emailFail": "hello@cypress.io",
+  "password": "123456cpr"
+}
+
+
