@@ -62,7 +62,7 @@ class Login extends React.Component {
     const { errorMsg, successMsg, isSubmitted } = this.state;
     return (
       <div className="login-page">
-        <h1>Banking Application</h1>
+        <h1>Banking Team</h1>
         <div className="login-form">
           <Form onSubmit={this.handleLogin}>
           {errorMsg && errorMsg.signin_error ? (
@@ -97,7 +97,7 @@ class Login extends React.Component {
                 Login
               </Button>
               <Link to="/register" className="btn btn-secondary">
-                Create account
+                Create Account
               </Link>
             </div>
           </Form>
