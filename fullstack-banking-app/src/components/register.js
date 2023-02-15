@@ -32,7 +32,7 @@ class Register extends React.Component {
     if (!allFieldsEntered) {
       this.setState({
         errorMsg: {
-          signup_error: 'Please enter all the fields.'
+          signup_error: ''
         }
       });
     } else {
